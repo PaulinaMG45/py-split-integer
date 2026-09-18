@@ -8,14 +8,18 @@ def test_sum_of_the_parts_should_be_equal_to_value() -> None:
 
 
 def test_should_split_into_equal_parts_when_value_divisible_by_parts() -> None:
-    assert len(split_integer(6, 2)) == 2 and split_integer(6, 2) == [3, 3], (
+    parts = split_integer(6, 2)
+
+    assert len(parts) == 2 and parts == [3, 3], (
         "The parts return by split_integer of (6, 2)"
         "should split into equal parts"
     )
 
 
 def test_should_return_part_equals_to_value_when_split_into_one_part() -> None:
-    assert len(split_integer(8, 1)) == 1 and split_integer(8, 1) == [8], (
+    parts = split_integer(8, 1)
+
+    assert len(parts) == 1 and parts == [8], (
         "split_integer of (8, 1) should split into one part"
     )
 
@@ -35,6 +39,6 @@ def test_should_add_zeros_when_value_is_less_than_number_of_parts() -> None:
 def test_diff_between_max_and_min_should_be_less_or_equal_to_one() -> None:
     parts = split_integer(6, 2)
 
-    assert min(parts) - max(parts) <= 1, (
+    assert max(parts) - min(parts) <= 1, (
         "The difference between max and min should be less or equal to one"
     )
